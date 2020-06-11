@@ -13,8 +13,7 @@ import matplotlib.pyplot as plt
 xdim = 64
 ydim = 64
 
-input_img = Input(shape=(xdim, ydim, 1))  # adapt this if using `channels_first` image data format
-
+input_img = Input(shape=(xdim, ydim, 1)) 
 x = Conv2D(256, (3, 3), activation='relu', padding='same')(input_img)
 x = MaxPooling2D((2, 2), padding='same')(x)
 x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
@@ -71,22 +70,22 @@ x_test_head_noisy = np.array(arraystesthead['imagesRecon'])
 
 x_train = x_train.astype('float32') #/ 255.
 x_train_noisy = x_train_noisy.astype('float32') #/ 255.
-x_train = np.reshape(x_train, (6000, xdim, ydim, 1))  # adapt this if using `channels_first` image data format
-x_train_noisy = np.reshape(x_train_noisy, (6000, xdim, ydim, 1))  # adapt this if using `channels_first` image data format
+x_train = np.reshape(x_train, (6000, xdim, ydim, 1))  
+x_train_noisy = np.reshape(x_train_noisy, (6000, xdim, ydim, 1)) 
 
 x_test = x_test.astype('float32') #/ 255.
 x_test_noisy = x_test_noisy.astype('float32') #/ 255.
-x_test = np.reshape(x_test, (1200, xdim, ydim, 1))  # adapt this if using `channels_first` image data format
+x_test = np.reshape(x_test, (1200, xdim, ydim, 1))  
 x_valid = x_test[1000:1200,:,:,:]
 x_test = x_test[1:1000,:,:,:]
-x_test_noisy = np.reshape(x_test_noisy, (1200, xdim, ydim, 1))  # adapt this if using `channels_first` image data format
+x_test_noisy = np.reshape(x_test_noisy, (1200, xdim, ydim, 1)) 
 x_valid_noisy = x_test_noisy[1000:1200,:,:,:]
 x_test_noisy = x_test_noisy[1:1000,:,:,:]
 
 # x_test_head = x_test_head.astype('float32') 
 # x_test_head_noisy = x_test_head_noisy.astype('float32')
-# x_test_head = np.reshape(x_test_head, (len(x_test_head), 26, 256, 1))  # adapt this if using `channels_first` image data format
-# x_test_head_noisy = np.reshape(x_test_head_noisy, (len(x_test_head_noisy), 256, 256, 1))  # adapt this if using `channels_first` image data format
+# x_test_head = np.reshape(x_test_head, (len(x_test_head), 26, 256, 1)) 
+# x_test_head_noisy = np.reshape(x_test_head_noisy, (len(x_test_head_noisy), 256, 256, 1))  
 # x_train_head = x_test_head[200:256,:,:,:]
 # x_train_head_noisy = x_test_head_noisy[200:256,:,:,:]
 

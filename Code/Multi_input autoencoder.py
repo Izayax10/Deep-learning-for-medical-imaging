@@ -9,7 +9,7 @@
 # xdim = 0
 # ydim = 0
 
-# input_img = Input(shape=(64, 64, 3))  # adapt this if using `channels_first` image data format
+# input_img = Input(shape=(64, 64, 3)) 
 
 # x = Conv2D(512, (3, 3), activation='relu', padding='same')(input_img)
 # x = MaxPooling2D((2, 2), padding='same')(x)
@@ -68,21 +68,20 @@
 
 # x_train = x_train.astype('float32') #/ 255.
 # x_train_noisy = x_train_noisy.astype('float32') #/ 255.
-# x_train = np.reshape(x_train, (6000, 64, 64, 1))  # adapt this if using `channels_first` image data format
+# x_train = np.reshape(x_train, (6000, 64, 64, 1))  
 # x_train = x_train[1:2001,:,:,:]
-# x_train_noisy = np.reshape(x_train_noisy, (2000, 64, 64, 3))  # adapt this if using `channels_first` image data format
+# x_train_noisy = np.reshape(x_train_noisy, (2000, 64, 64, 3)) 
 
 # x_test = x_test.astype('float32') #/ 255.
 # x_test_noisy = x_test_noisy.astype('float32') #/ 255.
-# x_test = np.reshape(x_test, (1200, 64, 64, 1))  # adapt this if using `channels_first` image data format
+# x_test = np.reshape(x_test, (1200, 64, 64, 1)) 
 # x_test = x_test[1:401,:,:,:]
-# x_test_noisy = np.reshape(x_test_noisy, (400, 64, 64, 3))  # adapt this if using `channels_first` image data format
+# x_test_noisy = np.reshape(x_test_noisy, (400, 64, 64, 3))  
 
 # # x_test_head = x_test_head.astype('float32') 
 # # x_test_head_noisy = x_test_head_noisy.astype('float32')
-# # x_test_head = np.reshape(x_test_head, (len(x_test_head), 256, 256, 1))  # adapt this if using `channels_first` image data format
-# # x_test_head_noisy = np.reshape(x_test_head_noisy, (len(x_test_head_noisy), 256, 256, 1))  # adapt this if using `channels_first` image data format
-
+# # x_test_head = np.reshape(x_test_head, (len(x_test_head), 256, 256, 1)) 
+# # x_test_head_noisy = np.reshape(x_test_head_noisy, (len(x_test_head_noisy), 256, 256, 1))
 
 # autoencoder = Model(input_img, decoded)
 # autoencoder.compile(optimizer='adam', loss='binary_crossentropy')
@@ -124,7 +123,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 
-input_img = Input(shape=(64, 64, 3))  # adapt this if using `channels_first` image data format
+input_img = Input(shape=(64, 64, 3))  
 print(input_img)
 x = Conv2D(128, (3, 3), activation='relu', padding='same')(input_img)
 print(x)
@@ -178,18 +177,18 @@ x_test_noisy = np.array(arraystest['testingdata_noisy'])
 
 x_train = x_train.astype('float32') 
 x_train_noisy = x_train_noisy.astype('float32') 
-x_train = np.reshape(x_train, (500, 64, 64, 1))  # adapt this if using `channels_first` image data format
-x_train_noisy = np.reshape(x_train_noisy, (500, 64, 64, 3))  # adapt this if using `channels_first` image data format
+x_train = np.reshape(x_train, (500, 64, 64, 1)) 
+x_train_noisy = np.reshape(x_train_noisy, (500, 64, 64, 3))  
 
 x_test = x_test.astype('float32') 
 x_test_noisy = x_test_noisy.astype('float32') 
-x_test = np.reshape(x_test, (100, 64, 64, 1))  # adapt this if using `channels_first` image data format
-x_test_noisy = np.reshape(x_test_noisy, (100, 64, 64, 3))  # adapt this if using `channels_first` image data format
+x_test = np.reshape(x_test, (100, 64, 64, 1))  
+x_test_noisy = np.reshape(x_test_noisy, (100, 64, 64, 3))  
 
 # x_test_head = x_test_head.astype('float32') 
 # x_test_head_noisy = x_test_head_noisy.astype('float32')
-# x_test_head = np.reshape(x_test_head, (len(x_test_head), 256, 256, 1))  # adapt this if using `channels_first` image data format
-# x_test_head_noisy = np.reshape(x_test_head_noisy, (len(x_test_head_noisy), 256, 256, 1))  # adapt this if using `channels_first` image data format
+# x_test_head = np.reshape(x_test_head, (len(x_test_head), 256, 256, 1))  
+# x_test_head_noisy = np.reshape(x_test_head_noisy, (len(x_test_head_noisy), 256, 256, 1))  
 
 
 autoencoder = Model(input_img, decoded)
